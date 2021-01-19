@@ -32,7 +32,7 @@ class talk : eosio::contract {
             table.get(reply_to);
 
         // Create an ID if user didn't specify one
-        eosio::check(id < 1'000'000'000ull, "user-specified id is too big");
+        eosio::check(id < 1'000'000'000ull, "user-specified id is way too big. Make it smaller.");
         if (!id)
             id = std::max(table.available_primary_key(), 1'000'000'000ull);
 
